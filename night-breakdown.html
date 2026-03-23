@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Night Breakdown Safety Guide | Recovero</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .fade-in { opacity: 0; transform: translateY(20px); transition: all 0.7s ease-out; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body class="bg-white text-slate-900 antialiased">
+
+    <nav class="py-6 border-b border-slate-100 bg-white/80 backdrop-blur-md sticky top-0 z-50">
+        <div class="max-w-4xl mx-auto px-6 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2 font-bold text-xl tracking-tighter">
+                <img src="recovero-logo.png" alt="Logo" class="h-8 w-auto"> Recovero
+            </a>
+            <a href="index.html#blog" class="text-sm font-bold text-slate-500 hover:text-orange-600">← Back to Guides</a>
+        </div>
+    </nav>
+
+    <article class="max-w-3xl mx-auto px-6 py-20">
+        <div class="fade-in">
+            <p class="text-orange-600 font-bold uppercase tracking-widest text-xs mb-4">Safety Essentials</p>
+            <h1 class="text-4xl md:text-5xl font-black tracking-tighter uppercase italic mb-8">What to do if your car breaks down at night</h1>
+            <img src="roadside-issues.jpg" class="w-full h-96 object-cover rounded-3xl mb-12 shadow-2xl" alt="Roadside safety">
+        </div>
+
+        <div class="prose prose-slate lg:prose-xl fade-in space-y-8 text-slate-600 leading-relaxed">
+            <p class="text-xl font-medium text-slate-800">Breaking down at night can be a frightening experience. Visibility is low, and you feel more vulnerable. Here is our expert guide to staying safe until a Recovero truck arrives.</p>
+            
+            <h3 class="text-2xl font-bold text-slate-900 mt-12">1. Move to Safety Immediately</h3>
+            <p>If your vehicle is still moving, try to pull over to a safe location as far from traffic as possible. If you are on a motorway, try to reach the hard shoulder or an emergency area. Always exit the vehicle through the doors away from the traffic (the passenger side).</p>
+
+            <h3 class="text-2xl font-bold text-slate-900 mt-12">2. Make Yourself Visible</h3>
+            <p>Switch on your hazard lights immediately. If it's dark or foggy, keep your sidelights on as well. If you have a high-visibility jacket in your car (which we highly recommend keeping in the glovebox), put it on before exiting the vehicle.</p>
+
+            <div class="bg-orange-50 border-l-4 border-orange-500 p-8 rounded-r-2xl my-12">
+                <h4 class="text-orange-900 font-bold mb-2">Recovero Expert Tip:</h4>
+                <p class="text-orange-800">Never stand behind or in front of your vehicle. If another car hits your vehicle, you could be pinned. Stand well back from the road, ideally behind a crash barrier.</p>
+            </div>
+
+            <h3 class="text-2xl font-bold text-slate-900 mt-12">3. Call for Professional Recovery</h3>
+            <p>Once you are in a safe position, call our 24/7 dispatch line. Provide your exact location—using "What3Words" is incredibly helpful for our drivers to find you in the dark. Lock your car doors and wait in a safe, visible spot away from the flow of traffic.</p>
+        </div>
+
+        <div class="mt-20 p-10 bg-slate-950 rounded-3xl text-center text-white fade-in">
+            <h2 class="text-2xl font-bold mb-4">Stuck in the dark right now?</h2>
+            <p class="text-slate-400 mb-8">Our Portsmouth fleet is active 24/7 with rapid response times.</p>
+            <a href="tel:1800TOWRESCUE" class="bg-orange-600 text-white px-8 py-4 rounded-full font-bold hover:bg-orange-700 transition-all inline-block">CALL NOW: 1-800-TOW-RESCUE</a>
+        </div>
+    </article>
+
+    <footer class="py-12 bg-slate-50 text-center border-t border-slate-100">
+        <p class="text-slate-400 text-[10px] uppercase tracking-widest">© 2026 Recovero Auto Services Ltd.</p>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
