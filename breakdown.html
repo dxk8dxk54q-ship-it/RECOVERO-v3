@@ -1,1 +1,170 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breakdown Recovery | Recovero</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script src="https://unpkg.com/lucide@latest"></script>
 
+    <style>
+        /* Smooth fade-in for scrolling */
+        .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 font-sans antialiased overflow-x-hidden">
+
+    <nav id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 border-b bg-slate-950/20 backdrop-blur-md border-white/10 py-6">
+        <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3 group">
+                <img src="recovero-logo.png" alt="Recovero Logo" class="h-8 w-auto rounded-lg object-contain bg-orange-600 p-1" onerror="this.style.display='none'">
+                <i data-lucide="truck" class="text-white w-6 h-6 logo-icon" id="backup-icon"></i>
+                <span id="nav-brand" class="text-xl font-bold tracking-tight text-white group-hover:text-orange-500 transition-colors">Recovero</span>
+            </a>
+            <div class="hidden md:flex items-center gap-8">
+                <a href="index.html#services" class="nav-link text-sm font-medium transition-colors text-white/80 hover:text-white">Services</a>
+                <a href="index.html#why-us" class="nav-link text-sm font-medium transition-colors text-white/80 hover:text-white">About</a>
+                <a href="index.html#faq" class="nav-link text-sm font-medium transition-colors text-white/80 hover:text-white">FAQ</a>
+            </div>
+            <a href="tel:1800TOWRESCUE" id="nav-btn" class="px-6 py-2.5 rounded-full text-sm font-semibold transition-all flex items-center gap-2 shadow-sm bg-white text-slate-900 hover:bg-slate-50">
+                Request Tow <i data-lucide="phone-call" class="w-4 h-4"></i>
+            </a>
+        </div>
+    </nav>
+
+    <header class="relative pt-40 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-slate-950">
+        <div class="absolute inset-0 z-0 opacity-30">
+            <img src="roadside-issues.jpg" alt="Breakdown Recovery Background" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-b from-slate-950 via-slate-950/80 to-slate-950"></div>
+        </div>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-6 text-center fade-in">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-500/10 border border-orange-500/20 text-orange-400 text-xs font-bold tracking-widest uppercase mb-6">
+                <i data-lucide="wrench" class="w-3 h-3"></i> 24/7 Availability
+            </div>
+            <h1 class="text-5xl md:text-6xl font-black text-white tracking-tighter uppercase italic mb-6">
+                Breakdown <span class="text-orange-500">Recovery.</span>
+            </h1>
+            <p class="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed">
+                Stranded on the roadside? Our rapid response teams across Portsmouth and the surrounding areas are ready to get you and your vehicle to safety.
+            </p>
+        </div>
+    </header>
+
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+            <div class="relative fade-in">
+                <div class="rounded-2xl overflow-hidden shadow-2xl border border-slate-100">
+                    <img src="non-start.jpg" alt="Non-starting vehicle being recovered" class="w-full aspect-square md:aspect-[4/3] object-cover">
+                </div>
+                <div class="absolute -bottom-6 -right-6 w-48 h-48 bg-orange-50 rounded-full -z-10 blur-3xl"></div>
+            </div>
+
+            <div class="fade-in">
+                <h2 class="text-3xl font-bold text-slate-900 tracking-tight mb-6">
+                    We turn a stressful breakdown into a seamless recovery.
+                </h2>
+                <p class="text-slate-500 mb-8 leading-relaxed">
+                    A vehicle breakdown is unpredictable and incredibly stressful, especially if you are on a busy road or traveling at night. Our priority is your safety. We dispatch immediately, bringing state-of-the-art recovery equipment to handle engine faults, electrical failures, and non-starters without causing any further damage to your vehicle.
+                </p>
+
+                <ul class="space-y-6">
+                    <li class="flex items-start gap-4">
+                        <div class="bg-orange-100 p-2 rounded-lg text-orange-600 mt-1"><i data-lucide="zap" class="w-5 h-5"></i></div>
+                        <div>
+                            <h4 class="font-bold text-slate-900">Diagnostics & Jump Starts</h4>
+                            <p class="text-sm text-slate-500">If it's a simple battery issue, we'll try to get you moving immediately on the spot.</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-4">
+                        <div class="bg-orange-100 p-2 rounded-lg text-orange-600 mt-1"><i data-lucide="shield-check" class="w-5 h-5"></i></div>
+                        <div>
+                            <h4 class="font-bold text-slate-900">Safe Loading & Transport</h4>
+                            <p class="text-sm text-slate-500">Using advanced flatbed and soft-strap technology, we transport your car safely to your home or chosen garage.</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-4">
+                        <div class="bg-orange-100 p-2 rounded-lg text-orange-600 mt-1"><i data-lucide="clock" class="w-5 h-5"></i></div>
+                        <div>
+                            <h4 class="font-bold text-slate-900">Rapid ETA Updates</h4>
+                            <p class="text-sm text-slate-500">You will never be left guessing. We provide accurate arrival times so you know help is on the way.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-slate-900 text-center border-t border-slate-800 relative overflow-hidden">
+        <div class="absolute inset-0 bg-orange-600/5 blur-3xl rounded-full translate-y-1/2"></div>
+        <div class="relative z-10 max-w-3xl mx-auto px-6 fade-in">
+            <h2 class="text-3xl font-bold text-white tracking-tight mb-6">Do you need immediate assistance?</h2>
+            <p class="text-slate-400 mb-10">Our dispatch team is standing by 24/7. Call us now for an immediate quote and rapid dispatch.</p>
+            <a href="tel:1800TOWRESCUE" class="inline-flex items-center gap-3 px-8 py-4 bg-orange-600 hover:bg-orange-500 text-white font-bold rounded-full transition-all hover:-translate-y-1 shadow-[0_0_30px_rgba(234,88,12,0.3)]">
+                <i data-lucide="phone" class="w-5 h-5"></i> Call 1-800-TOW-RESCUE
+            </a>
+        </div>
+    </section>
+
+    <footer class="bg-slate-950 text-slate-300 pt-16 pb-10 border-t border-slate-900">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h3 class="text-2xl font-bold text-white mb-4">Recovero Services</h3>
+            <p class="text-slate-500 mb-8">Professional, rapid, and reliable vehicle recovery operating 24/7.</p>
+            <p class="text-sm text-slate-600">&copy; 2026 Recovero Auto Services. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        // Navbar Scroll Effect
+        const navbar = document.getElementById('navbar');
+        const navBrand = document.getElementById('nav-brand');
+        const navLinks = document.querySelectorAll('.nav-link');
+        const navBtn = document.getElementById('nav-btn');
+        const backupIcon = document.getElementById('backup-icon');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                navbar.classList.replace('bg-slate-950/20', 'bg-white/90');
+                navbar.classList.replace('border-white/10', 'border-slate-200');
+                navbar.classList.add('shadow-sm');
+                navBrand.classList.replace('text-white', 'text-slate-900');
+                backupIcon.classList.replace('text-white', 'text-orange-600');
+                navLinks.forEach(l => {
+                    l.classList.replace('text-white/80', 'text-slate-600');
+                    l.classList.replace('hover:text-white', 'hover:text-orange-600');
+                });
+                navBtn.classList.replace('bg-white', 'bg-orange-600');
+                navBtn.classList.replace('text-slate-900', 'text-white');
+            } else {
+                navbar.classList.replace('bg-white/90', 'bg-slate-950/20');
+                navbar.classList.replace('border-slate-200', 'border-white/10');
+                navbar.classList.remove('shadow-sm');
+                navBrand.classList.replace('text-slate-900', 'text-white');
+                backupIcon.classList.replace('text-orange-600', 'text-white');
+                navLinks.forEach(l => {
+                    l.classList.replace('text-slate-600', 'text-white/80');
+                    l.classList.replace('hover:text-orange-600', 'hover:text-white');
+                });
+                navBtn.classList.replace('bg-orange-600', 'bg-white');
+                navBtn.classList.replace('text-white', 'text-slate-900');
+            }
+        });
+
+        // Simple Fade-in Animation on Scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
