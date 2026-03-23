@@ -3,236 +3,178 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recovero - Rapid Recovery Service</title>
-    
+    <title>Recovero | 24/7 Rapid Vehicle Recovery Portsmouth</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    
     <script src="https://unpkg.com/lucide@latest"></script>
-
     <style>
-        @keyframes driveRight {
-            0% { transform: translateX(-100%); opacity: 0; }
-            15% { opacity: 0.15; transform: translateX(20%) translateY(10px); }
-            85% { opacity: 0.15; transform: translateX(100%) translateY(0); }
-            100% { transform: translateX(120%); opacity: 0; }
-        }
-        @keyframes driveLeft {
-            0% { transform: translateX(120%) scaleX(-1); opacity: 0; }
-            15% { opacity: 0.1; transform: translateX(80%) scaleX(-1) translateY(-15px); }
-            85% { opacity: 0.1; transform: translateX(0%) scaleX(-1) translateY(0); }
-            100% { transform: translateX(-120%) scaleX(-1); opacity: 0; }
-        }
-        .animate-truck-1 { animation: driveRight 30s linear infinite; }
-        .animate-truck-2 { animation: driveLeft 45s linear infinite 15s; }
-        
-        /* Smooth fade-in for scrolling */
-        .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+        .fade-in { opacity: 0; transform: translateY(20px); transition: all 0.7s ease-out; }
         .fade-in.visible { opacity: 1; transform: translateY(0); }
+        .bg-blur { backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-900 font-sans antialiased overflow-x-hidden">
+<body class="bg-slate-950 text-slate-200 font-sans selection:bg-orange-500 selection:text-white">
 
-    <nav id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 border-b bg-slate-950/20 backdrop-blur-md border-white/10 py-6">
+    <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300 py-6 border-b border-white/5 bg-slate-950/50 bg-blur">
         <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
             <div class="flex items-center gap-3">
-                <img src="recovero-logo.png" alt="Recovero Logo" class="h-8 w-auto rounded-lg object-contain bg-orange-600 p-1" onerror="this.style.display='none'">
-                <i data-lucide="truck" class="text-white w-6 h-6 logo-icon" id="backup-icon"></i>
-                <span id="nav-brand" class="text-xl font-bold tracking-tight text-white">Recovero</span>
+                <img src="recovero-logo.png" alt="Logo" class="h-9 w-auto">
+                <span class="text-xl font-bold tracking-tighter text-white uppercase italic">Recovero</span>
             </div>
-            <div class="hidden md:flex items-center gap-8">
-                <a href="#services" class="nav-link text-sm font-medium transition-colors text-white/80 hover:text-white">Services</a>
-                <a href="#why-us" class="nav-link text-sm font-medium transition-colors text-white/80 hover:text-white">About</a>
-                <a href="#faq" class="nav-link text-sm font-medium transition-colors text-white/80 hover:text-white">FAQ</a>
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+                <a href="#services" class="hover:text-orange-500 transition-colors">Services</a>
+                <a href="#about" class="hover:text-orange-500 transition-colors">About</a>
+                <a href="#faq" class="hover:text-orange-500 transition-colors">FAQ</a>
+                <a href="tel:1800TOWRESCUE" class="bg-orange-600 hover:bg-orange-500 text-white px-5 py-2 rounded-full transition-all shadow-lg shadow-orange-600/20">Call Now</a>
             </div>
-            <a href="tel:1800TOWRESCUE" id="nav-btn" class="px-6 py-2.5 rounded-full text-sm font-semibold transition-all flex items-center gap-2 shadow-sm bg-white text-slate-900 hover:bg-slate-50">
-                Request Tow <i data-lucide="phone-call" class="w-4 h-4"></i>
-            </a>
         </div>
     </nav>
 
-    <header class="relative min-h-screen flex items-center pt-20 overflow-hidden bg-slate-950">
+    <section class="relative min-h-screen flex items-center pt-20 overflow-hidden">
         <div class="absolute inset-0 z-0">
-            <img src="recovery-truck.jpg" alt="Tow Truck on Duty" class="w-full h-full object-cover opacity-40 mix-blend-luminosity">
-            <div class="absolute inset-0 bg-gradient-to-b from-slate-950 via-slate-950/80 to-slate-950"></div>
-            
-            <div class="absolute bottom-1/4 left-0 w-[500px] pointer-events-none z-0 animate-truck-1">
-                <img src="https://images.unsplash.com/photo-1586191582151-f746323d1899?auto=format&fit=crop&w=800" alt="Moving Truck" class="w-full h-auto object-contain mix-blend-screen grayscale brightness-75">
-            </div>
-            <div class="absolute top-1/3 right-0 w-[400px] pointer-events-none z-0 animate-truck-2 scale-x-[-1]">
-                <img src="https://images.unsplash.com/photo-1586191582151-f746323d1899?auto=format&fit=crop&w=800" alt="Moving Truck" class="w-full h-auto object-contain mix-blend-screen grayscale brightness-50">
-            </div>
+            <img src="recovery-truck.jpg" class="w-full h-full object-cover opacity-30" alt="Fleet">
+            <div class="absolute inset-0 bg-gradient-to-b from-slate-950 via-transparent to-slate-950"></div>
         </div>
-
-        <div class="relative z-10 max-w-7xl mx-auto px-6 w-full grid lg:grid-cols-2 gap-16 items-center">
-            <div class="space-y-10 fade-in">
-                <div class="space-y-6">
-                    <div class="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm text-orange-400 text-[10px] font-bold tracking-[0.2em] uppercase">
-                        <span class="flex h-2 w-2 relative">
-                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"></span>
-                            <span class="relative inline-flex rounded-full h-2 w-2 bg-orange-500"></span>
-                        </span>
-                        Live Dispatch Active
-                    </div>
-                    <h1 class="text-6xl md:text-7xl lg:text-8xl font-black text-white tracking-tighter leading-[0.85] uppercase italic">
-                        Rapid <br />
-                        <span class="text-orange-500">Recovery</span> <br />
-                        Service.
-                    </h1>
-                    <p class="text-lg md:text-xl text-slate-400 max-w-lg leading-relaxed font-medium">
-                        Premium roadside assistance and vehicle recovery. We're the silent partner in your journey, ready 24/7.
-                    </p>
-                </div>
-                <div class="flex flex-col sm:flex-row items-center gap-6">
-                    <a href="tel:1800TOWRESCUE" class="group relative px-8 py-4 bg-orange-600 rounded-full overflow-hidden shadow-[0_0_40px_rgba(234,88,12,0.3)] transition-all hover:-translate-y-1">
-                        <div class="relative flex items-center gap-3 text-white font-bold tracking-tight">
-                            <span>REQUEST IMMEDIATE TOW</span>
-                            <i data-lucide="phone-call" class="w-5 h-5 group-hover:rotate-12 transition-transform"></i>
-                        </div>
-                    </a>
-                </div>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
+            <div class="fade-in">
+                <div class="inline-block px-4 py-1.5 rounded-full bg-orange-500/10 border border-orange-500/20 text-orange-500 text-[10px] font-black uppercase tracking-[0.2em] mb-6">Live Dispatch Active</div>
+                <h1 class="text-6xl md:text-8xl font-black text-white tracking-tighter leading-[0.85] uppercase italic mb-8">
+                    Rapid <br><span class="text-orange-600">Recovery</span><br>Service.
+                </h1>
+                <p class="text-slate-400 text-lg md:text-xl max-w-md leading-relaxed mb-10">Premium roadside assistance in Portsmouth. We're ready 24/7 to get you back on the move.</p>
+                <a href="tel:1800TOWRESCUE" class="inline-flex items-center gap-4 bg-white text-slate-950 px-8 py-4 rounded-full font-bold text-lg hover:bg-orange-500 hover:text-white transition-all transform hover:-translate-y-1">
+                    REQUEST A TOW <i data-lucide="phone" class="w-5 h-5"></i>
+                </a>
             </div>
-
-            <div class="hidden lg:block relative fade-in">
-                <div class="relative z-10 rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
-                    <img src="recovery-truck.jpg" alt="Premium Towing" class="w-full aspect-[4/5] object-cover">
-                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
-                    <div class="absolute bottom-8 left-8 right-8 p-6 rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 flex items-center justify-between">
+            <div class="hidden lg:block fade-in" style="transition-delay: 200ms;">
+                <div class="relative rounded-3xl overflow-hidden border border-white/10 shadow-2xl shadow-orange-500/5">
+                    <img src="recovery-truck.jpg" alt="Hero Truck" class="w-full aspect-[4/5] object-cover">
+                    <div class="absolute bottom-6 left-6 right-6 p-6 bg-slate-900/80 bg-blur rounded-2xl border border-white/10 flex justify-between items-center">
                         <div>
-                            <p class="text-white font-bold text-lg tracking-tight">Fleet Status</p>
-                            <p class="text-orange-400 text-xs font-bold uppercase tracking-widest">14 Units Available</p>
+                            <p class="text-white font-bold text-lg">Fleet Status</p>
+                            <p class="text-orange-500 text-xs font-bold uppercase tracking-widest">14 Units Active</p>
                         </div>
-                        <div class="h-12 w-12 rounded-full bg-orange-600 flex items-center justify-center text-white">
-                            <i data-lucide="zap" class="w-6 h-6"></i>
-                        </div>
+                        <div class="h-12 w-12 bg-orange-600 rounded-full flex items-center justify-center"><i data-lucide="zap" class="text-white"></i></div>
                     </div>
                 </div>
             </div>
         </div>
-    </header>
+    </section>
 
-    <div class="bg-slate-900 py-6 overflow-hidden border-t border-white/10">
-        <div class="flex flex-wrap items-center justify-center gap-6 md:gap-12 text-slate-300 font-semibold text-sm md:text-base tracking-tight max-w-7xl mx-auto px-6">
-            <div class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-5 h-5 text-orange-500"></i><span>24/7 Towing</span></div>
-            <div class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-5 h-5 text-orange-500"></i><span>Jump Starts</span></div>
-            <div class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-5 h-5 text-orange-500"></i><span>Winch Outs</span></div>
-            <div class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-5 h-5 text-orange-500"></i><span>Lockout Assistance</span></div>
+    <section id="services" class="py-24 bg-slate-900/50">
+        <div class="max-w-7xl mx-auto px-6 text-center mb-16 fade-in">
+            <h2 class="text-4xl md:text-5xl font-black text-white tracking-tighter uppercase italic">Our Services</h2>
         </div>
-    </div>
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-8">
+            <div class="bg-slate-900 p-8 rounded-3xl border border-white/5 hover:border-orange-500/50 transition-all group fade-in">
+                <div class="h-14 w-14 bg-orange-600/10 rounded-2xl flex items-center justify-center text-orange-500 mb-6 group-hover:bg-orange-600 group-hover:text-white transition-colors">
+                    <i data-lucide="wrench"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-4">Breakdown Recovery</h3>
+                <p class="text-slate-400 text-sm leading-relaxed mb-6">Non-starting vehicle or engine failure? We provide rapid recovery to your home or a local garage.</p>
+                <a href="breakdown.html" class="text-orange-500 font-bold text-sm flex items-center gap-2 hover:gap-3 transition-all">Learn More <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+            </div>
 
-    <section id="why-us" class="bg-slate-50/50 py-24">
+            <div class="bg-slate-900 p-8 rounded-3xl border border-white/5 hover:border-orange-500/50 transition-all group fade-in" style="transition-delay: 100ms;">
+                <div class="h-14 w-14 bg-orange-600/10 rounded-2xl flex items-center justify-center text-orange-500 mb-6 group-hover:bg-orange-600 group-hover:text-white transition-colors">
+                    <i data-lucide="shield-alert"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-4">Accident Recovery</h3>
+                <p class="text-slate-400 text-sm leading-relaxed mb-6">Following an accident, we safely recover your vehicle and can assist with insurance storage.</p>
+                <a href="#" class="text-orange-500 font-bold text-sm flex items-center gap-2">Coming Soon</a>
+            </div>
+
+            <div class="bg-slate-900 p-8 rounded-3xl border border-white/5 hover:border-orange-500/50 transition-all group fade-in" style="transition-delay: 200ms;">
+                <div class="h-14 w-14 bg-orange-600/10 rounded-2xl flex items-center justify-center text-orange-500 mb-6 group-hover:bg-orange-600 group-hover:text-white transition-colors">
+                    <i data-lucide="truck"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-4">Vehicle Transport</h3>
+                <p class="text-slate-400 text-sm leading-relaxed mb-6">Professional transport for classic cars, auction wins, or long-distance vehicle relocation.</p>
+                <a href="#" class="text-orange-500 font-bold text-sm flex items-center gap-2">Coming Soon</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-24 bg-slate-950 overflow-hidden">
         <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-20 items-center">
             <div class="fade-in">
-                <span class="inline-block text-orange-600 text-xs font-bold tracking-wider uppercase mb-4">Our Commitment</span>
-                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight leading-tight mb-8">
-                    Built for speed, safety, and reliability on every call.
-                </h2>
-                <div class="space-y-8">
-                    <div class="flex items-start gap-4">
-                        <div class="bg-orange-100 rounded-lg p-2.5 mt-1 text-orange-600"><i data-lucide="clock" class="w-5 h-5"></i></div>
-                        <div>
-                            <h4 class="text-lg text-slate-900 font-bold tracking-tight mb-1">Rapid Response Time</h4>
-                            <p class="text-sm text-slate-500 leading-relaxed">Our geo-routed fleet ensures the closest tow truck is dispatched immediately.</p>
-                        </div>
-                    </div>
-                    <div class="flex items-start gap-4">
-                        <div class="bg-orange-100 rounded-lg p-2.5 mt-1 text-orange-600"><i data-lucide="wallet" class="w-5 h-5"></i></div>
-                        <div>
-                            <h4 class="text-lg text-slate-900 font-bold tracking-tight mb-1">Transparent Pricing</h4>
-                            <p class="text-sm text-slate-500 leading-relaxed">No roadside price gouging. You receive a clear estimate before dispatch.</p>
-                        </div>
-                    </div>
-                </div>
+                <img src="vehicle-transport.jpg" alt="Working" class="rounded-3xl shadow-2xl grayscale hover:grayscale-0 transition-all duration-700">
             </div>
-            <div class="relative fade-in">
-                <div class="aspect-[4/3] rounded-2xl overflow-hidden bg-slate-200 shadow-xl border border-slate-200/50">
-                    <img src="vehicle-transport.jpg" alt="Tow truck driving" class="w-full h-full object-cover">
+            <div class="fade-in">
+                <span class="text-orange-500 font-bold uppercase tracking-widest text-xs">Since 2024</span>
+                <h2 class="text-4xl md:text-5xl font-black text-white tracking-tighter uppercase italic my-6">Built for Reliability.</h2>
+                <p class="text-slate-400 leading-relaxed mb-8">We understand that being stranded is more than just an inconvenience—it's a safety issue. That's why Recovero was built on a "speed-first" philosophy. Every truck in our Portsmouth fleet is equipped with modern tracking and safe-handling equipment.</p>
+                <div class="grid grid-cols-2 gap-8">
+                    <div>
+                        <p class="text-3xl font-black text-white mb-1">99%</p>
+                        <p class="text-xs text-slate-500 uppercase font-bold tracking-widest">Satisfaction</p>
+                    </div>
+                    <div>
+                        <p class="text-3xl font-black text-white mb-1">&lt;30m</p>
+                        <p class="text-xs text-slate-500 uppercase font-bold tracking-widest">Avg Response</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight mb-4">Common Roadside Issues</h2>
-                <p class="text-base text-slate-500">We handle everything from minor fixes to major recoveries.</p>
-            </div>
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="group cursor-pointer fade-in">
-                    <div class="relative h-64 rounded-2xl overflow-hidden mb-5 bg-slate-100 border border-slate-200">
-                        <img src="roadside-issues.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Roadside Issue">
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-2 leading-tight tracking-tight group-hover:text-orange-600 transition-colors">Emergency Roadside Assistance</h3>
-                    <p class="text-sm text-slate-500">Stuck on the shoulder? We provide rapid safety and recovery services.</p>
-                </div>
-                <div class="group cursor-pointer fade-in">
-                    <div class="relative h-64 rounded-2xl overflow-hidden mb-5 bg-slate-100 border border-slate-200">
-                        <img src="non-start.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Non Start Vehicle">
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-2 leading-tight tracking-tight group-hover:text-orange-600 transition-colors">Non-Starting Vehicles</h3>
-                    <p class="text-sm text-slate-500">Dead battery, starter issues, or unknown faults? We will get you moving or to a shop.</p>
-                </div>
+    <section id="faq" class="py-24 bg-slate-900/30">
+        <div class="max-w-3xl mx-auto px-6">
+            <h2 class="text-4xl font-black text-white text-center mb-16 tracking-tighter uppercase italic">FAQ</h2>
+            <div class="space-y-4">
+                <details class="group bg-slate-900 p-6 rounded-2xl border border-white/5 open:border-orange-500/30 transition-all">
+                    <summary class="list-none font-bold text-white flex justify-between items-center cursor-pointer">
+                        How fast can you reach me in Portsmouth?
+                        <i data-lucide="plus" class="w-5 h-5 group-open:rotate-45 transition-transform text-orange-500"></i>
+                    </summary>
+                    <p class="pt-4 text-slate-400 text-sm">Most customers within Portsmouth and Fareham see a truck in under 30 minutes, depending on traffic and location.</p>
+                </details>
+                <details class="group bg-slate-900 p-6 rounded-2xl border border-white/5 open:border-orange-500/30 transition-all">
+                    <summary class="list-none font-bold text-white flex justify-between items-center cursor-pointer">
+                        Do you accept card payments?
+                        <i data-lucide="plus" class="w-5 h-5 group-open:rotate-45 transition-transform text-orange-500"></i>
+                    </summary>
+                    <p class="pt-4 text-slate-400 text-sm">Yes, all our drivers carry mobile card readers and accept Apple Pay, Google Pay, and all major debit/credit cards.</p>
+                </details>
             </div>
         </div>
     </section>
 
-    <footer class="bg-slate-950 text-slate-300 pt-20 pb-10 border-t border-slate-900">
+    <footer class="py-20 bg-slate-950 border-t border-white/5">
         <div class="max-w-7xl mx-auto px-6 text-center">
-            <h3 class="text-2xl font-bold text-white mb-4">Recovero Services</h3>
-            <p class="text-slate-500 mb-8">Professional, rapid, and reliable vehicle recovery operating 24/7.</p>
-            <p class="text-sm text-slate-600">&copy; 2026 Recovero Auto Services. All Rights Reserved.</p>
+            <img src="recovero-logo.png" alt="Logo" class="h-10 w-auto mx-auto mb-8">
+            <p class="text-slate-500 text-sm mb-8 italic">Rapid Recovery, Whenever You Need It.</p>
+            <p class="text-slate-600 text-[10px] uppercase tracking-widest">© 2026 Recovero Auto Services Ltd.</p>
         </div>
     </footer>
 
+    <a href="tel:1800TOWRESCUE" class="fixed bottom-8 right-8 z-[100] bg-orange-600 text-white p-4 rounded-full shadow-2xl hover:scale-110 active:scale-95 transition-all">
+        <i data-lucide="phone-call" class="w-6 h-6"></i>
+    </a>
+
     <script>
-        // Initialize Icons
         lucide.createIcons();
 
-        // Navbar Scroll Effect
-        const navbar = document.getElementById('navbar');
-        const navBrand = document.getElementById('nav-brand');
-        const navLinks = document.querySelectorAll('.nav-link');
-        const navBtn = document.getElementById('nav-btn');
-        const backupIcon = document.getElementById('backup-icon');
-
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 20) {
-                navbar.classList.replace('bg-slate-950/20', 'bg-white/90');
-                navbar.classList.replace('border-white/10', 'border-slate-200');
-                navbar.classList.add('shadow-sm');
-                navBrand.classList.replace('text-white', 'text-slate-900');
-                backupIcon.classList.replace('text-white', 'text-orange-600');
-                navLinks.forEach(l => {
-                    l.classList.replace('text-white/80', 'text-slate-600');
-                    l.classList.replace('hover:text-white', 'hover:text-orange-600');
-                });
-                navBtn.classList.replace('bg-white', 'bg-orange-600');
-                navBtn.classList.replace('text-slate-900', 'text-white');
-            } else {
-                navbar.classList.replace('bg-white/90', 'bg-slate-950/20');
-                navbar.classList.replace('border-slate-200', 'border-white/10');
-                navbar.classList.remove('shadow-sm');
-                navBrand.classList.replace('text-slate-900', 'text-white');
-                backupIcon.classList.replace('text-orange-600', 'text-white');
-                navLinks.forEach(l => {
-                    l.classList.replace('text-slate-600', 'text-white/80');
-                    l.classList.replace('hover:text-orange-600', 'hover:text-white');
-                });
-                navBtn.classList.replace('bg-orange-600', 'bg-white');
-                navBtn.classList.replace('text-white', 'text-slate-900');
-            }
-        });
-
-        // Simple Fade-in Animation on Scroll
+        // Reveal on Scroll
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
+                if (entry.isIntersecting) entry.target.classList.add('visible');
             });
         }, { threshold: 0.1 });
-        
+
         document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Nav Blur on Scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('py-4', 'shadow-2xl');
+                nav.classList.remove('py-6');
+            } else {
+                nav.classList.remove('py-4', 'shadow-2xl');
+                nav.classList.add('py-6');
+            }
+        });
     </script>
 </body>
 </html>
